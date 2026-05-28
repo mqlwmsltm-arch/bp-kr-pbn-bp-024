@@ -1,213 +1,514 @@
-
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>인문 철학 지식 저널 및 아카이브</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --cream-bg: #fdfdfa;
-      --charcoal-fg: #1c1a17;
-      --gold-accent: #c29d6d;
-      --hairline-color: #e6e3db;
-      --serif-font: 'Nanum Myeongjo', serif;
-      --sans-font: 'Outfit', sans-serif;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <!-- SEO & Metadata -->
+    <title>강남 바이럴 마케팅 전문 | 진성 홍보 솔루션 | Kr-PBN-BP-024</title>
+    <meta name="description" content="강남 바이럴 마케팅 전문 업체입니다. 무미건조한 광고 말고, 진짜 튀는 바이럴을 원하세요? 블로그, 인스타, 커뮤니티까지 섭렵하는 우리의 전략을 확인하세요.">
+    <meta name="keywords" content="강남 바이럴 마케팅 전문, 강남 홍보, 바이럴 마케팅 업체, 인스타그램 홍보, 블로그 체험단, SNS 마케팅">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://kr-pbn-bp-024.pages.dev">
+    
+    <!-- Open Graph / Social -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="강남 바이럴 마케팅 전문 | 진성 홍보 솔루션">
+    <meta property="og:description" content="뻔한 광고는 그만. 강렬한 바이럴 마케팅으로 강남을 불태우세요.">
+    <meta property="og:url" content="https://kr-pbn-bp-024.pages.dev">
+    <meta property="og:image" content="https://placehold.co/1200x630/000000/ff3b00?text=VIRAL+MARKETING">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Design System Metas -->
+    <meta name="bpaas-design-system" content="brutalist-avantgarde">
+    <meta name="bpaas-design-theme" content="kr-neon-void">
+
+    <!-- JSON-LD Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "강남 바이럴 마케팅 전문 (Kr-PBN-BP-024)",
+      "image": "https://placehold.co/600x400/000000/ff3b00?text=LOGO",
+      "telephone": "010-6279-0862",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "서울시 강남구",
+        "addressRegion": "서울",
+        "addressCountry": "KR"
+      },
+      "url": "https://kr-pbn-bp-024.pages.dev",
+      "priceRange": "$$"
     }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      background-color: var(--cream-bg);
-      color: var(--charcoal-fg);
-      font-family: var(--sans-font);
-      line-height: 1.8;
-      padding: 0 40px;
-    }
-    .wrapper {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 80px 0;
-    }
-    header {
-      border-bottom: 1px solid var(--hairline-color);
-      padding-bottom: 32px;
-      margin-bottom: 60px;
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-    }
-    .brand {
-      font-family: var(--serif-font);
-      font-size: 1.5rem;
-      font-weight: 800;
-      color: var(--charcoal-fg);
-      text-decoration: none;
-      letter-spacing: 0.05em;
-    }
-    nav { display: flex; gap: 32px; }
-    nav a {
-      color: var(--charcoal-fg);
-      text-decoration: none;
-      font-size: 0.8rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.15em;
-      transition: color 0.3s ease;
-    }
-    nav a:hover { color: var(--gold-accent); }
-    main { padding-bottom: 80px; }
-    .kicker {
-      font-size: 0.75rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.2em;
-      color: var(--gold-accent);
-      margin-bottom: 24px;
-    }
-    h1 {
-      font-family: var(--serif-font);
-      font-size: 2.5rem;
-      font-weight: 700;
-      line-height: 1.35;
-      letter-spacing: -0.02em;
-      color: var(--charcoal-fg);
-      margin-bottom: 40px;
-    }
-    .story-body {
-      font-family: var(--serif-font);
-      font-size: 1.15rem;
-      color: var(--charcoal-fg);
-      font-weight: 400;
-      text-align: justify;
-      margin-bottom: 60px;
-    }
-    .story-body p { margin-bottom: 24px; text-indent: 12px; }
-    .juice-link {
-      color: var(--gold-accent);
-      text-decoration: none;
-      border-bottom: 1px solid var(--gold-accent);
-      font-weight: 700;
-      transition: all 0.3s ease;
-    }
-    .juice-link:hover {
-      color: var(--charcoal-fg);
-      border-bottom-color: var(--charcoal-fg);
-    }
-    .editorials {
-      border-top: 1px solid var(--hairline-color);
-      padding-top: 60px;
-    }
-    .editorial-label {
-      font-size: 0.8rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.15em;
-      color: var(--gold-accent);
-      margin-bottom: 40px;
-    }
-    .editorial-flow {
-      display: flex;
-      flex-direction: column;
-      gap: 40px;
-    }
-    .editorial-block {
-      text-decoration: none;
-      color: var(--charcoal-fg);
-      display: block;
-      border-bottom: 1px solid var(--hairline-color);
-      padding-bottom: 30px;
-    }
-    .editorial-block:hover h3 { color: var(--gold-accent); }
-    .editorial-block h3 {
-      font-family: var(--serif-font);
-      font-size: 1.4rem;
-      font-weight: 700;
-      margin-bottom: 12px;
-      transition: color 0.3s ease;
-    }
-    .editorial-block p {
-      font-size: 0.95rem;
-      color: #555555;
-      font-weight: 300;
-    }
-    footer {
-      border-top: 1px solid var(--hairline-color);
-      padding-top: 40px;
-      display: flex;
-      justify-content: space-between;
-      font-size: 0.75rem;
-      letter-spacing: 0.1em;
-      color: #888888;
-    }
-    footer a { color: #888888; text-decoration: none; }
-    footer a:hover { color: var(--gold-accent); }
-    @media(max-width: 768px) {
-      header { flex-direction: column; gap: 16px; }
-      h1 { font-size: 2rem; }
-      .story-body { font-size: 1.05rem; }
-    }
-  </style>
+    </script>
+
+    <style>
+        /* CSS VARIABLES & RESET */
+        :root {
+            --color-bg: #000000;
+            --color-text: #ffffff;
+            --color-accent: #ff3b00;
+            --color-border: #ffffff;
+            --font-main: 'Impact', 'Haettenschweiler', 'Franklin Gothic Bold', 'Charcoal', 'Helvetica Inserat', 'Bitstream Vera Sans Bold', 'Arial Black', sans-serif;
+            --font-mono: 'Courier New', Courier, monospace;
+            
+            --space-gap: 48px;
+            --space-pad: 72px;
+            --space-sec: 120px;
+            
+            --border-thick: 4px solid var(--color-border);
+            --border-accent: 4px solid var(--color-accent);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            font-family: var(--font-mono);
+            line-height: 1.6;
+            overflow-x: hidden;
+            font-size: 16px;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-main);
+            text-transform: uppercase;
+            line-height: 0.9;
+            letter-spacing: -1px;
+            font-weight: normal;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        /* UTILITIES */
+        .text-accent { color: var(--color-accent); }
+        .bg-accent { background-color: var(--color-accent); }
+        .border-all { border: var(--border-thick); }
+        .border-bottom { border-bottom: var(--border-thick); }
+        .uppercase { text-transform: uppercase; }
+        .flex { display: flex; }
+        .grid { display: grid; }
+        .center { align-items: center; justify-content: center; }
+
+        /* HEADER */
+        header {
+            padding: var(--space-pad);
+            border-bottom: var(--border-thick);
+            position: sticky;
+            top: 0;
+            background: var(--color-bg);
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .brand {
+            font-family: var(--font-main);
+            font-size: 2.5rem;
+            border: var(--border-thick);
+            padding: 10px 20px;
+            transform: rotate(-2deg);
+            background: var(--color-text);
+            color: var(--color-bg);
+            box-shadow: 10px 10px 0px var(--color-accent);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            font-family: var(--font-main);
+            font-size: 1.5rem;
+            text-decoration: underline;
+            text-decoration-thickness: 3px;
+            text-decoration-color: var(--color-accent);
+        }
+
+        nav a:hover {
+            background: var(--color-accent);
+            color: var(--color-bg);
+            text-decoration: none;
+            transform: skew(-10deg);
+            display: inline-block;
+        }
+
+        /* HERO SECTION */
+        #hero {
+            min-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: var(--space-pad);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-title {
+            font-size: clamp(4rem, 15vw, 12rem);
+            line-height: 0.8;
+            margin-bottom: var(--space-gap);
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-title span {
+            display: block;
+            -webkit-text-stroke: 2px var(--color-text);
+            color: transparent;
+        }
+
+        .hero-title span.filled {
+            color: var(--color-text);
+            -webkit-text-stroke: 0;
+        }
+        
+        .hero-title span.accent {
+            color: var(--color-accent);
+            -webkit-text-stroke: 0;
+        }
+
+        .hero-decor {
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: repeating-linear-gradient(
+                45deg,
+                var(--color-accent),
+                var(--color-accent) 10px,
+                #000 10px,
+                #000 20px
+            );
+            border: var(--border-thick);
+            top: 20%;
+            right: 10%;
+            z-index: 1;
+            animation: spin 10s linear infinite;
+        }
+
+        @keyframes spin { 100% { transform: rotate(360deg); } }
+
+        /* INTRO / ABOUT */
+        #about {
+            padding: var(--space-sec) var(--space-pad);
+            background: var(--color-text);
+            color: var(--color-bg);
+            border-bottom: var(--border-thick);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-gap);
+            align-items: center;
+        }
+
+        .big-text {
+            font-size: 2rem;
+            font-weight: bold;
+            border-left: 10px solid var(--color-accent);
+            padding-left: 20px;
+        }
+
+        /* SERVICES */
+        #services {
+            padding: var(--space-sec) var(--space-pad);
+        }
+
+        .section-title {
+            font-size: 4rem;
+            margin-bottom: var(--space-sec);
+            border-bottom: var(--border-thick);
+            display: inline-block;
+        }
+
+        .service-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 4px;
+            background: var(--color-border);
+            border: var(--border-thick);
+        }
+
+        .service-card {
+            background: var(--color-bg);
+            padding: 40px;
+            transition: all 0.2s ease;
+        }
+
+        .service-card:hover {
+            background: var(--color-accent);
+            color: var(--color-bg);
+            transform: translateY(-10px);
+        }
+
+        .service-card h3 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        /* REVIEWS (UGC) */
+        #reviews {
+            padding: var(--space-sec) var(--space-pad);
+            background: #111;
+            border-top: var(--border-thick);
+            border-bottom: var(--border-thick);
+        }
+
+        .review-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-gap);
+        }
+
+        .review-card {
+            border: 2px solid #333;
+            padding: 30px;
+            background: #000;
+            position: relative;
+        }
+
+        .review-card::before {
+            content: '"';
+            font-family: var(--font-main);
+            font-size: 5rem;
+            color: var(--color-accent);
+            position: absolute;
+            top: -20px;
+            left: 10px;
+        }
+
+        .stars { color: var(--color-accent); margin-bottom: 10px; }
+        .meta { font-size: 0.8rem; color: #888; margin-top: 20px; display: flex; justify-content: space-between; }
+
+        /* CTA / CONTACT */
+        #contact {
+            padding: var(--space-sec) var(--space-pad);
+            text-align: center;
+            background: var(--color-accent);
+            color: var(--color-bg);
+        }
+
+        .cta-box {
+            border: var(--border-thick);
+            padding: var(--space-pad);
+            background: var(--color-bg);
+            color: var(--color-text);
+            display: inline-block;
+            transform: rotate(1deg);
+            max-width: 800px;
+        }
+
+        .phone-link {
+            display: block;
+            font-size: clamp(2rem, 5vw, 4rem);
+            font-family: var(--font-main);
+            margin-top: 20px;
+            text-decoration: underline;
+            text-decoration-color: var(--color-accent);
+        }
+        
+        .phone-link:hover {
+            background: var(--color-accent);
+            color: var(--color-bg);
+        }
+
+        /* FOOTER */
+        footer {
+            padding: var(--space-pad);
+            text-align: center;
+            font-size: 0.9rem;
+            border-top: 1px solid #333;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 20px;
+                padding: 20px;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                gap: 10px;
+                width: 100%;
+                text-align: center;
+            }
+
+            .about-grid, .review-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-title {
+                font-size: 15vw;
+            }
+
+            .hero-decor {
+                width: 200px;
+                height: 200px;
+                top: 10%;
+                right: -50px;
+            }
+
+            #hero, #about, #services, #reviews, #contact {
+                padding: 60px 20px;
+            }
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
+
+    <!-- Header -->
     <header>
-      <a href="/" class="brand">EDITORIAL.KR</a>
-      <nav><a href="index.html">HOME</a> | <a href="sitemap.xml">SITEMAP</a></nav>
-    </header>
-    <main>
-      <div class="kicker">BOUTIQUE KR / SELECTION ACCENT</div>
-      <h1>인문 철학 지식 저널 및 아카이브</h1>
-      <div class="story-body">
-        환영합니다. 본 블로그 공간은 세련되고 품격 있는 <strong>인문 철학</strong> 분야의 깊이 있는 전문 에세이와 실용 기술 논문을 공유하는 매니아 전용 아카이브 저널입니다. 아래의 최근 기사 목록을 통해 새로운 지식의 지평을 넓혀 보시기 바랍니다.
-      </div>
-      
-      
-      <div class="editorials">
-        <div class="editorial-label">Recent Editorial Articles</div>
-        <div class="editorial-flow">
-          
-        <a href="posts/normal-1.html" class="editorial-block">
-          <h3>바뤼흐 스피노자의 에티카(Ethica) 속 동물의 코나투스(Conatus)와 비주류 정서론 분석</h3>
-          <p>네덜란드의 고독한 렌즈 가공 철학자 스피노자의 주저 에티카에서 피력된 코나투스(자신의 존재를 유지하려는 영속적 본성 노력) 개념을 동물에게 투영해 볼 때, 인간 중심적 관점에서 해...</p>
-        </a>
-      
-
-        <a href="posts/normal-2.html" class="editorial-block">
-          <h3>질 들뢰즈의 리좀(Rhizome) 공간 역학으로 조망한 아날로그 골목길의 인문 구조학</h3>
-          <p>시작과 끝이 규정되지 않고 끊임없이 파편적으로 연결되며 영토를 가로지르는 들뢰즈의 리좀 모델을 격자형 대도시가 아닌 오랜 유기적 골목길의 공간 미학에 적용해 볼 때, 규칙적 구획이...</p>
-        </a>
-      
-
-        <a href="posts/normal-3.html" class="editorial-block">
-          <h3>중세 스콜라 철학의 영적 통신 논쟁: 천사들의 비물질적 메시지 전달 속도와 주파수</h3>
-          <p>중세 대철학자 토마스 아퀴나스가 주창했던 천사들의 언어(Speech of Angels) 형이상학은 물리적 육체와 공간의 장벽이 없는 순수한 지성적 존재들이 어떻게 공간을 왜곡하고 ...</p>
-        </a>
-      
-
-        <a href="posts/juice-1.html" class="editorial-block">
-          <h3>지적 인문 철학 독자들을 위해 준비한 강남 셔츠룸 통합 안내 리포트</h3>
-          <p>신과 만물의 필연적인 자기 보존 욕구와 중심을 인정하지 않는 무정형의 리좀적 골목길 사색을 거치며 시대의 심연을 정밀하게 성찰해 나가는 깊이 있는 지성인분들이라면, 거칠고 차가운 ...</p>
-        </a>
-      
-
-        <a href="posts/juice-2.html" class="editorial-block">
-          <h3>지적 인문 철학 독자들을 위해 준비한 강남 셔츠룸 통합 안내 리포트</h3>
-          <p>신과 만물의 필연적인 자기 보존 욕구와 중심을 인정하지 않는 무정형의 리좀적 골목길 사색을 거치며 시대의 심연을 정밀하게 성찰해 나가는 깊이 있는 지성인분들이라면, 거칠고 차가운 ...</p>
-        </a>
-      
+        <div class="brand">
+            KR-PBN-BP-024<br>
+            <span style="font-size: 0.5em; font-family: var(--font-mono);">GANGNAM_VIRAL</span>
         </div>
-      </div>
+        <nav>
+            <ul>
+                <li><a href="#about">ABOUT</a></li>
+                <li><a href="#services">SERVICES</a></li>
+                <li><a href="#reviews">REVIEWS</a></li>
+                <li><a href="#contact">CONTACT</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero">
+            <div class="hero-decor"></div>
+            <h1 class="hero-title">
+                <span>강남</span>
+                <span class="filled">바이럴</span>
+                <span class="accent">전문</span>
+            </h1>
+            <p style="font-size: 1.5rem; max-width: 600px; border: 2px solid #fff; padding: 20px; background: #000;">
+                뻔한 광고는 지루합니다. 우리는 <strong>강남 바이럴 마케팅 전문</strong>전략으로 당신의 브랜드를 거리의 소음 속에서 끄집어냅니다. Raw & Real.
+            </p>
+        </section>
+
+        <!-- About Section -->
+        <section id="about">
+            <div class="about-grid">
+                <div>
+                    <h2 style="font-size: 3rem; margin-bottom: 20px;">왜 우리인가?</h2>
+                    <p style="font-size: 1.2rem; margin-bottom: 20px;">
+                        솔직히 말해서, 대부분의 마케팅 회사는 지루합니다. 엑셀 시트와 파워포인트만 쌓아두죠. 우리는 다릅니다.
+                    </p>
+                    <p style="font-size: 1.2rem;">
+                        강남 테헤란로에서 홍대까지, 실제 사람들이 모여드는 곳에서 '진짜' 같은 이야기를 퍼뜨립니다. 과장된 숫자보다는 실제 반응에 집중하는 <strong>강남 바이럴 마케팅 전문</strong> 파트너십을 약속합니다.
+                    </p>
+                </div>
+                <div style="border: 4px solid #000; padding: 20px; background: #fff; transform: rotate(2deg);">
+                    <div style="font-family: var(--font-main); font-size: 4rem; color: var(--color-accent);">NO BS.</div>
+                    <p>Just pure viral impact. We don't do subtle. We do loud.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services">
+            <h2 class="section-title">OUR <span class="text-accent">ARSENAL</span></h2>
+            
+            <div class="service-list">
+                <div class="service-card">
+                    <h3>01. BLOG</h3>
+                    <p>검색을 장악하세요. 파워블로거 네트워크를 통해 상위 노출을 보장하는 전략적 포스팅.</p>
+                </div>
+                <div class="service-card">
+                    <h3>02. INSTA</h3>
+                    <p>视觉적 충격. 인플루언서 섭외부터 릴즈 제작까지, MZ 세대의 시선을 훔치는 바이럴.</p>
+                </div>
+                <div class="service-card">
+                    <h3>03. CAFE</h3>
+                    <p>지역 기반 커뮤니티 공략. 강남, 송파, 마포 등 주요 상권 오픈캐스트 및 카페 홍보.</p>
+                </div>
+                <div class="service-card">
+                    <h3>04. YOUTUBE</h3>
+                    <p>영상 콘텐츠의 힘. 크리에이터 협업을 통한 제품 리뷰 및 브랜드 스토리텔링.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reviews Section (UGC) -->
+        <section id="reviews">
+            <h2 class="section-title" style="color: #fff; border-color: #333;">REAL <span class="text-accent">NOISE</span></h2>
+            
+            <div class="review-grid">
+                <!-- Review 1 -->
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"다른 업체들랑은 차원이 다름. 일단 말이 통함. 강남 바이럴 마케팅 전문 찾아다니다가 여기 정착함. 매출 200% ↑"</p>
+                    <div class="meta">
+                        <span>@Seoul_Boss</span>
+                        <span>2023.10.12</span>
+                    </div>
+                </div>
+                
+                <!-- Review 2 -->
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"디자인도 그렇고 접근 방식이 너무 스트리트해서 우리 브랜드랑 찰떡이었음. 분위기 메이커들 모여있네요."</p>
+                    <div class="meta">
+                        <span>@Cafe_Owner_K</span>
+                        <span>2023.11.05</span>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="review-card">
+                    <div class="stars">★★★★☆</div>
+                    <p>"빠른 대응이 레전드. 주말에도 연락됨. 역시 강남 바이럴 마케팅 전문은 다르다. 다음 프로젝트도 여기."</p>
+                    <div class="meta">
+                        <span>@Startup_Jung</span>
+                        <span>2023.12.01</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <div class="cta-box">
+                <h2 style="font-size: 3rem; margin-bottom: 20px;">READY TO <span class="text-accent">EXPLODE?</span></h2>
+                <p>망설이지 마세요. 당신의 브랜드가 숨 쉬고 싶다면 지금 연락하세요.</p>
+                <a href="tel:010-6279-0862" class="phone-link">010-6279-0862</a>
+                <p style="margin-top: 20px; font-family: var(--font-mono);">kr-pbn-bp-024.pages.dev</p>
+            </div>
+        </section>
     </main>
+
+    <!-- Footer -->
     <footer>
-      <div>&copy; 2026 EDITORIAL.KR. ALL RIGHTS RESERVED.</div>
-      <div>
-        <a href="sitemap.xml">SITEMAP</a> | 
-        <a href="#">PRIVACY</a> | 
-        <a href="#">DISCLAIMER</a>
-      </div>
+        <p>&copy; 2024 강남 바이럴 마케팅 전문 (Kr-PBN-BP-024). All Rights Reserved.</p>
+        <p style="margin-top: 10px; color: #555;">Designed with Brutalist Concept.</p>
     </footer>
-  </div>
+
 </body>
 </html>

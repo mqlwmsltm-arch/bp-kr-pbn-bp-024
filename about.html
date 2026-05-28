@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- SEO & Metadata -->
+    <title>정보 | 강남 바이럴 마케팅 전문 솔루션</title>
+    <meta name="description" content="강남 바이럴 마케팅 전문 업체입니다. 무미건조한 광고 말고, 진짜 튀는 바이럴을 원하세요? 블로그, 인스타, 커뮤니티까지 섭렵하는 우리의 전략을 확인하세요.">
+    <meta name="keywords" content="강남 바이럴 마케팅 전문, 강남 홍보, 바이럴 마케팅 업체, 인스타그램 홍보, 블로그 체험단, SNS 마케팅">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://kr-pbn-bp-024.pages.dev">
+    <!-- Open Graph / Social -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="강남 바이럴 마케팅 전문 | 진성 홍보 솔루션">
+    <meta property="og:description" content="강남 바이럴 마케팅 전문, 유튜브 쇼츠, 블로그 체험단, 인스타 홍보까지. 지역 밀착형 바이럴 마케팅 전략 공개합니다.">
+    <meta property="og:image" content="https://placehold.co/1200x630/1a1a1a/FFF?text=Info+Page">
+    <meta property="og:url" content="https://kr-pbn-bp-024.pages.dev">
+
+    <style>
+        /* CSS VARIABLES & RESET */
+        :root {
+            --bg-color: #f4f4f0;
+            --text-color: #1a1a1a;
+            --accent-color: #FF4500; /* Orange Red */
+            --border-color: #1a1a1a;
+            --card-bg: #ffffff;
+            --font-main: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+            --spacing-unit: 1rem;
+        }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        html {
+            font-size: 16px;
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: var(--font-main);
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: var(--spacing-unit);
+            letter-spacing: -0.02em;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: 0.3s ease;
+        }
+        a:hover {
+            color: var(--accent-color);
+        }
+        ul {
+            list-style: none;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            border: 2px solid var(--border-color);
+        }
+
+        /* UTILITIES */
+        .text-accent { color: var(--accent-color); }
+        .bg-accent { background-color: var(--accent-color); }
+        .border-all { border: 2px solid var(--border-color); }
+        .border-bottom { border-bottom: 2px solid var(--border-color); }
+        .uppercase { text-transform: uppercase; }
+        .flex { display: flex; }
+        .grid { display: grid; }
+        .center { align-items: center; justify-content: center; }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background-color: var(--text-color);
+            color: #fff;
+            border: 2px solid var(--text-color);
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        .btn:hover {
+            background-color: transparent;
+            color: var(--text-color);
+        }
+        .btn-outline {
+            background-color: transparent;
+            color: var(--text-color);
+        }
+        .btn-outline:hover {
+            background-color: var(--text-color);
+            color: #fff;
+        }
+
+        /* COMPONENTS */
+        header {
+            padding: 1rem 0;
+            border-bottom: 2px solid var(--border-color);
+            background: var(--bg-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 900;
+            border: 2px solid var(--border-color);
+            padding: 0.2rem 0.5rem;
+            background: #fff;
+        }
+        nav ul {
+            display: flex;
+            gap: 1.5rem;
+        }
+        nav a {
+            font-weight: 700;
+            font-size: 1rem;
+        }
+
+        .hero {
+            padding: 4rem 0;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+        .info-card {
+            background: var(--card-bg);
+            border: 2px solid var(--border-color);
+            padding: 2rem;
+            box-shadow: 8px 8px 0px var(--text-color);
+            transition: transform 0.2s;
+        }
+        .info-card:hover {
+            transform: translate(-4px, -4px);
+            box-shadow: 12px 12px 0px var(--text-color);
+        }
+        .info-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid var(--accent-color);
+            display: inline-block;
+        }
+
+        .faq-section {
+            background: #fff;
+            border: 2px solid var(--border-color);
+            padding: 3rem;
+            margin-bottom: 4rem;
+        }
+        .faq-item {
+            margin-bottom: 2rem;
+            border-bottom: 1px dashed var(--border-color);
+            padding-bottom: 1rem;
+        }
+        .faq-question {
+            font-weight: 700;
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            cursor: pointer;
+        }
+        .faq-answer {
+            color: #555;
+        }
+
+        .cta-section {
+            background: var(--text-color);
+            color: #fff;
+            padding: 4rem 0;
+            text-align: center;
+            border-top: 2px solid var(--border-color);
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        footer {
+            padding: 2rem 0;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .nav-wrapper {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 1rem;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+            .faq-section {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVIGATION -->
+    <header>
+        <div class="container nav-wrapper">
+            <a href="/" class="logo">GANGNAM VIRAL</a>
+            <nav>
+                <ul>
+                    <li><a href="/">홈</a></li>
+                    <li><a href="/about">회사소개</a></li>
+                    <li><a href="/services">서비스</a></li>
+                    <li><a href="/info" class="text-accent">정보</a></li>
+                    <li><a href="tel:010-1234-5678" class="tel-link">문의전화</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main>
+        <!-- HERO SECTION -->
+        <section class="hero container">
+            <h1>강남 바이럴 마케팅, <br><span class="text-accent">왜 이렇게 어려울까?</span></h1>
+            <p>을지로에서 강남역까지, 트렌드의 최전선에 있는 사장님들을 위한<br>진짜 바이럴 마케팅 정보를 정리해 드립니다.</p>
+        </section>
+
+        <!-- INFO CARDS SECTION -->
+        <section class="container">
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>01. 블로그 체험단 vs 파워블로거</h3>
+                    <p>안녕하세요, 강남역 맛집 사장님. '체험단' 돌리셨는데 손님 안 오시나요? 무료 식사만 얻어먹고 후기는 부실하게 달아주는 경험, 한 번쯤 해보셨을 겁니다. 저희는 단순 로또성 포스팅이 아닙니다. 해당 업종 (성형외과, 헬스장, 카페 등) 에 진심인 '진성 파워'를 매칭해 드립니다. 강남구 수능로, 학동로 근처 상권 특성상 디테일한 정보와 감성적인 컷이 필수입니다. 딱딱한 홍보글은 이제 그만.</p>
+                </div>
+                <div class="info-card">
+                    <h3>02. 인스타그램 릴스 (Reels) 의 힘</h3>
+                    <p>요즘 강남 요석공주부터 세븐일레븐까지, 다들 릴스 찍습니다. 이미지는 기본이고, '움직임'이 핵심입니다. 15 초 안에 시선을 사로잡지 못하면 스크롤은 멈추지 않아요. 저희는 기획 단계부터 촬영, 편집까지 '바이럴'에 최적화된 숏폼 콘텐츠를 만듭니다. 트렌디한 BGM, 빠른 템포의 컷 편집으로 MZ 세대의 해시태그 (#강남맛집 #강남카페) 를 공략하세요.</p>
+                </div>
+                <div class="info-card">
+                    <h3>03. 지역 기반 커뮤니티 공략</h3>
+                    <p>강남, 서초, 송파 어르신들과 주부님들이 주로 보는 카페와 블로그가 따로 있습니다. 인스타 감성만 고집하다가는 타겟을 놓칠 수 있어요. '맘카페', '중고장터', '지역 정보 카페' 등 실질적인 구매력이 높은 채널에 바이럴을 퍼뜨립니다. 광고 티 팍팍 나는 글은 바로 삭제당합니다. 친구에게 추천하듯 자연스러운 입소문, 그것이 진정한 바이럴입니다.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ SECTION -->
+        <section class="container">
+            <div class="faq-section">
+                <h2 style="margin-bottom: 2rem; font-size: 2rem;">자주 묻는 질문 (FAQ)</h2>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Q. 예산이 적은데도 가능할까요?</div>
+                    <div class="faq-answer">A. "예산 적은데 챙겨줄 거냐?" 고 물으시는 분들 많아요. 네, 챙깁니다. 대기업만 광고하는 게 아닙니다. 갓 오픈한 소자본 사장님들 위해 가성비 좋은 '마이크로 인플루언서' 패키지를 구성해 드립니다. 효과 대비 비용, 확실하게 챙겨드립니다.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Q. 성형외과/병원 홍보도 하나요?</div>
+                    <div class="faq-answer">A. 압구정동, 신사동 성형외과 홍보는 저희가 가장 잘하는 분야 중 하나입니다. 병원 마케팅은 노출도 중요하지만, '신뢰도'가 생명입니다. 과장된 홍보보다는 Before/After 중심의 사실적인 후기 관리로 환자분을 모십니다. (의료광고법 준수)</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Q. 결과물이 마음에 안 들면?</div>
+                    <div class="faq-answer">A. "이게 뭐냐" 소리 듣기 싫어요. 저희도 마찬가지입니다. 기획안 단계에서 꼼꼼히 체크하고, 수정이 필요하면 최대한 반영합니다. 사장님과 소통하며 함께 만들어가는 바이럴, 그게 저희의 방식입니다.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- IMAGE PLACEHOLDER -->
+        <section class="container" style="margin-bottom: 4rem;">
+            <img src="https://placehold.co/1200x400/1a1a1a/FFF?text=Gangnam+Street+Viral+Strategy" alt="강남 바이럴 마케팅 전략 시뮬레이션" style="width: 100%; box-shadow: 10px 10px 0px var(--accent-color);">
+        </section>
+
+        <!-- CTA SECTION -->
+        <section class="cta-section">
+            <div class="container">
+                <h2 style="margin-bottom: 1rem;">아직도 전단지 돌리시나요?</h2>
+                <p style="margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">지금은 검색과 SNS 에서 살아남아야 장사가 됩니다. 강남 바이럴 마케팅 전문가에게 상의하세요. 무료로 컨설팅 해드립니다.</p>
+                <a href="tel:010-1234-5678" class="btn bg-accent" style="border-color: var(--accent-color);">무료 상담 신청하기</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <p>(주) 강남바이럴마케팅 | 대표: 홍길동 | 사업자등록번호: 123-45-67890</p>
+            <p>주소: 서울특별시 강남구 테헤란로 123 강남역 3 번출구</p>
+            <p>&copy; 2024 Gangnam Viral Marketing. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
