@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "importedAt": "2026-07-03T07:40:18.206Z",
+  "campaignId": null,
+  "slug": "kr-pbn-bp-024",
+  "adoptExisting": true,
+  "sourceType": "urlSnapshot",
+  "sourceUrl": "https://gangnam-web-guide.pbn-builder.xyz/",
+  "copiedFiles": 1,
+  "copiedBytes": 17635,
+  "fetchedAssets": 0,
+  "skippedAssets": 0,
+  "skippedSymlinks": 0
+}
