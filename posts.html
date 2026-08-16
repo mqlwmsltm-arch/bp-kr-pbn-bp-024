@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>글 목록 (1/2) · kr-pbn-bp-024</title>
+  <meta name="description" content="kr-pbn-bp-024에 올라온 글 목록입니다.">
+  <link rel="canonical" href="https://gangnam-web-guide.pbn-builder.xyz/posts.html">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <style>
+ /* CSS VARIABLES & RESET */
+ :root {
+ --color-bg: #000000;
+ --color-text: #ffffff;
+ --color-accent: #ff3b00;
+ --color-border: #ffffff;
+ --font-main: 'Impact', 'Haettenschweiler', 'Franklin Gothic Bold', 'Charcoal', 'Helvetica Inserat', 'Bitstream Vera Sans Bold', 'Arial Black', sans-serif;
+ --font-mono: 'Courier New', Courier, monospace;
+ 
+ --space-gap: 48px;
+ --space-pad: 72px;
+ --space-sec: 120px;
+ 
+ --border-thick: 4px solid var(--color-border);
+ --border-accent: 4px solid var(--color-accent);
+ }
+
+ * {
+ box-sizing: border-box;
+ margin: 0;
+ padding: 0;
+ }
+
+ html {
+ scroll-behavior: smooth;
+ }
+
+ body {
+ background-color: var(--color-bg);
+ color: var(--color-text);
+ font-family: var(--font-mono);
+ line-height: 1.6;
+ overflow-x: hidden;
+ font-size: 16px;
+ }
+
+ h1, h2, h3, h4, h5, h6 {
+ font-family: var(--font-main);
+ text-transform: uppercase;
+ line-height: 0.9;
+ letter-spacing: -1px;
+ font-weight: normal;
+ }
+
+ a {
+ color: inherit;
+ text-decoration: none;
+ }
+
+ ul {
+ list-style: none;
+ }
+
+ img {
+ max-width: 100%;
+ display: block;
+ }
+
+ /* UTILITIES */
+ .text-accent { color: var(--color-accent); }
+ .bg-accent { background-color: var(--color-accent); }
+ .border-all { border: var(--border-thick); }
+ .border-bottom { border-bottom: var(--border-thick); }
+ .uppercase { text-transform: uppercase; }
+ .flex { display: flex; }
+ .grid { display: grid; }
+ .center { align-items: center; justify-content: center; }
+
+ /* HEADER */
+ header {
+ padding: var(--space-pad);
+ border-bottom: var(--border-thick);
+ position: sticky;
+ top: 0;
+ background: var(--color-bg);
+ z-index: 100;
+ display: flex;
+ justify-content: space-between;
+ align-items: flex-start;
+ }
+
+ .brand {
+ font-family: var(--font-main);
+ font-size: 2.5rem;
+ border: var(--border-thick);
+ padding: 10px 20px;
+ transform: rotate(-2deg);
+ background: var(--color-text);
+ color: var(--color-bg);
+ box-shadow: 10px 10px 0px var(--color-accent);
+ }
+
+ nav ul {
+ display: flex;
+ gap: 20px;
+ }
+
+ nav a {
+ font-family: var(--font-main);
+ font-size: 1.5rem;
+ text-decoration: underline;
+ text-decoration-thickness: 3px;
+ text-decoration-color: var(--color-accent);
+ }
+
+ nav a:hover {
+ background: var(--color-accent);
+ color: var(--color-bg);
+ text-decoration: none;
+ transform: skew(-10deg);
+ display: inline-block;
+ }
+
+ /* HERO SECTION */
+ #hero {
+ min-height: 90vh;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ padding: var(--space-pad);
+ position: relative;
+ overflow: hidden;
+ }
+
+ .hero-title {
+ font-size: clamp(4rem, 15vw, 12rem);
+ line-height: 0.8;
+ margin-bottom: var(--space-gap);
+ position: relative;
+ z-index: 2;
+ }
+
+ .hero-title span {
+ display: block;
+ -webkit-text-stroke: 2px var(--color-text);
+ color: transparent;
+ }
+
+ .hero-title span.filled {
+ color: var(--color-text);
+ -webkit-text-stroke: 0;
+ }
+ 
+ .hero-title span.accent {
+ color: var(--color-accent);
+ -webkit-text-stroke: 0;
+ }
+
+ .hero-decor {
+ position: absolute;
+ width: 400px;
+ height: 400px;
+ background: repeating-linear-gradient(
+ 45deg,
+ var(--color-accent),
+ var(--color-accent) 10px,
+ #000 10px,
+ #000 20px
+ );
+ border: var(--border-thick);
+ top: 20%;
+ right: 10%;
+ z-index: 1;
+ animation: spin 10s linear infinite;
+ }
+
+ @keyframes spin { 100% { transform: rotate(360deg); } }
+
+ /* INTRO / ABOUT */
+ #about {
+ padding: var(--space-sec) var(--space-pad);
+ background: var(--color-text);
+ color: var(--color-bg);
+ border-bottom: var(--border-thick);
+ }
+
+ .about-grid {
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+ gap: var(--space-gap);
+ align-items: center;
+ }
+
+ .big-text {
+ font-size: 2rem;
+ font-weight: bold;
+ border-left: 10px solid var(--color-accent);
+ padding-left: 20px;
+ }
+
+ /* SERVICES */
+ #services {
+ padding: var(--space-sec) var(--space-pad);
+ }
+
+ .section-title {
+ font-size: 4rem;
+ margin-bottom: var(--space-sec);
+ border-bottom: var(--border-thick);
+ display: inline-block;
+ }
+
+ .service-list {
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+ gap: 4px;
+ background: var(--color-border);
+ border: var(--border-thick);
+ }
+
+ .service-card {
+ background: var(--color-bg);
+ padding: 40px;
+ transition: all 0.2s ease;
+ }
+
+ .service-card:hover {
+ background: var(--color-accent);
+ color: var(--color-bg);
+ transform: translateY(-10px);
+ }
+
+ .service-card h3 {
+ font-size: 2.5rem;
+ margin-bottom: 20px;
+ }
+
+ /* REVIEWS (UGC) */
+ #reviews {
+ padding: var(--space-sec) var(--space-pad);
+ background: #111;
+ border-top: var(--border-thick);
+ border-bottom: var(--border-thick);
+ }
+
+ .review-grid {
+ display: grid;
+ grid-template-columns: repeat(3, 1fr);
+ gap: var(--space-gap);
+ }
+
+ .review-card {
+ border: 2px solid #333;
+ padding: 30px;
+ background: #000;
+ position: relative;
+ }
+
+ .review-card::before {
+ content: '"';
+ font-family: var(--font-main);
+ font-size: 5rem;
+ color: var(--color-accent);
+ position: absolute;
+ top: -20px;
+ left: 10px;
+ }
+
+ .stars { color: var(--color-accent); margin-bottom: 10px; }
+ .meta { font-size: 0.8rem; color: #888; margin-top: 20px; display: flex; justify-content: space-between; }
+
+ /* CTA / CONTACT */
+ #contact {
+ padding: var(--space-sec) var(--space-pad);
+ text-align: center;
+ background: var(--color-accent);
+ color: var(--color-bg);
+ }
+
+ .cta-box {
+ border: var(--border-thick);
+ padding: var(--space-pad);
+ background: var(--color-bg);
+ color: var(--color-text);
+ display: inline-block;
+ transform: rotate(1deg);
+ max-width: 800px;
+ }
+
+ .phone-link {
+ display: block;
+ font-size: clamp(2rem, 5vw, 4rem);
+ font-family: var(--font-main);
+ margin-top: 20px;
+ text-decoration: underline;
+ text-decoration-color: var(--color-accent);
+ }
+ 
+ .phone-link:hover {
+ background: var(--color-accent);
+ color: var(--color-bg);
+ }
+
+ /* FOOTER */
+ footer {
+ padding: var(--space-pad);
+ text-align: center;
+ font-size: 0.9rem;
+ border-top: 1px solid #333;
+ }
+
+ /* RESPONSIVE */
+ @media (max-width: 768px) {
+ header {
+ flex-direction: column;
+ gap: 20px;
+ padding: 20px;
+ }
+ 
+ nav ul {
+ flex-direction: column;
+ gap: 10px;
+ width: 100%;
+ text-align: center;
+ }
+
+ .about-grid, .review-grid {
+ grid-template-columns: 1fr;
+ }
+
+ .hero-title {
+ font-size: 15vw;
+ }
+
+ .hero-decor {
+ width: 200px;
+ height: 200px;
+ top: 10%;
+ right: -50px;
+ }
+
+ #hero, #about, #services, #reviews, #contact {
+ padding: 60px 20px;
+ }
+ }
+ </style>
+  <meta property="og:title" content="글 목록 (1/2) · kr-pbn-bp-024">
+  <meta property="og:description" content="kr-pbn-bp-024에 올라온 글 목록입니다.">
+  <meta property="og:url" content="https://gangnam-web-guide.pbn-builder.xyz/posts.html">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+</head>
+<body>
+  <div class="container">
+    <header>
+ <div class="brand">
+ KR-PBN-BP-024<br>
+ <span style="font-size: 0.5em; font-family: var(--font-mono);">GANGNAM_VIRAL</span>
+ </div>
+ <nav>
+ <ul>
+ <li><a href="#about">ABOUT</a></li>
+ <li><a href="#services">SERVICES</a></li>
+ <li><a href="#reviews">REVIEWS</a></li>
+ <li><a href="#contact">CONTACT</a></li>
+ </ul>
+ </nav>
+ </header>
+    <main>
+      <h1>글 목록</h1>
+      <p>전체 34개 · 1/2 페이지</p>
+      <ul class="post-list">
+      <li class="post-item">
+        <a class="post-item__link" href="posts/field_note-002-m0slm0.html">강남 바이럴 마케팅 전문</a>
+        <p class="post-item__summary">급변하는 디지털 환경 속에서 강남 바이럴 마케팅 전문 업체와 협력하는 것은 기업의 생존과 직결되는 중요한 선택입니다. 수많은 소비자가 실시간으로 정보를 검색하고 판단하는 지금, 검색 결과 상단에 우</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0017.html">강남 바이럴 마케팅 전문 업체가 추천하는 마포/합정 인디 소셜 라운지 가이드와 프라이빗 파티 노하우</a>
+        <p class="post-item__summary">한적한 평일 저녁, 지인들과 함께 독특한 분위기의 공간을 찾는 이들이 늘고 있습니다. 획일화된 대형 상업 시설보다는 소규모 인원이 밀도 높은 대화를 나눌 수 있는 장소가 주목받는 추세입니다. 이런 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0018.html">강남 바이럴 마케팅 전문 업체가 추천하는 동대문 마사지 관리 시간대</a>
+        <p class="post-item__summary">많은 분이 온라인 홍보 전략을 세울 때 단순히 노출 빈도만을 높이면 된다고 생각합니다. 하지만 강남 바이럴 마케팅 전문 전략처럼 정확한 타깃과 타이밍을 분석하는 것이 실질적인 만족도를 높이는 핵심입</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0019.html">강남 바이럴 마케팅 전문 기법을 응용한 지수 성장 클리닉 정보 전략</a>
+        <p class="post-item__summary">웹사이트의 건강을 유지하기 위해서는 기술적 최적화, 양질의 콘텐츠 생산, 그리고 전략적인 외부 링크 관리가 동시에 충족되어야 합니다. 강남 바이럴 마케팅 전문 업체들이 공통으로 강조하는 것은 검색 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0020.html">강남 바이럴 마케팅 전문 컨설팅이 제안하는 마포 홍대 로컬 럭셔리 밤문화 가이드 및 업체 비교 기준</a>
+        <p class="post-item__summary">여러분은 밤문화를 즐기기 위해 새로운 공간을 선택할 때 무엇을 가장 우선순위에 두시나요? 단순히 유명한 곳을 따라가는 것이 아니라, 자신의 취향과 분위기에 맞는 곳을 찾는 안목이 필요한 시점입니다.</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0021.html">강남 바이럴 마케팅 전문 업체가 본 마포 코인노래방 방음 시설 비교 가이드</a>
+        <p class="post-item__summary">강남 바이럴 마케팅 전문 마케터의 시각에서 볼 때, 소음 민감도가 높은 상업 시설은 온라인 평판만큼이나 물리적인 방음 성능이 중요합니다. 특히 마포 지역의 코인노래방을 이용하려는 소비자들은 온라인에</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0022.html">강남 바이럴 마케팅 전문 기법을 통한 여기에서 확인 활용법</a>
+        <p class="post-item__summary">강남 바이럴 마케팅 전문 그룹에서는 검색엔진의 변화에 맞춰 웹사이트의 건강 상태를 정기적으로 진단합니다. 알고리즘 감점으로 인해 갑작스러운 순위 하락을 겪는 경우, 이를 복구하기 위한 일련의 치료 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0023.html">강남 바이럴 마케팅 전문 업체가 분석한 마포 유흥 투명 정찰제 가격 정보 디렉토리의 한계</a>
+        <p class="post-item__summary">강남 바이럴 마케팅 전문 컨설턴트로서 현장을 관찰해보면, 많은 이용객이 투명한 정찰제 정보를 찾다가 실패하는 지점은 주로 정보의 최신성 결여에 있습니다. 온라인상의 데이터는 업데이트 주기가 길어 실</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0024.html">강남 바이럴 마케팅 전문 노하우를 담은 마포 셔츠룸 예약 시 눈탱이 피하는 법</a>
+        <p class="post-item__summary">강남 바이럴 마케팅 전문 업체가 강조하는 것은 고객의 알 권리와 정당한 정보 획득입니다. 특히 유흥업계, 그중에서도 셔츠룸을 이용할 때 불필요한 금전적 피해를 입지 않으려면 사전 예약 체크리스트를 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0025.html">강남 바이럴 마케팅 전문 분야의 4</a>
+        <p class="post-item__summary">최근 급격하게 변화하는 검색 엔진 환경 속에서 많은 실무자가 효율적인 자동화 기법을 찾고 있습니다. 특히 초기 설정에서 발생하는 복잡한 오류를 줄이기 위해 체계적인 교육 과정을 찾는 사례가 늘어나는</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0026.html">강남 바이럴 마케팅 전문 업체의 구글 봇 정밀 검진 및 크롤 버짓 밀착 간호 방법</a>
+        <p class="post-item__summary">일부 운영자는 크롤링 빈도를 무작위로 늘리는 것이 무조건 유리하다고 오해하곤 합니다. 사실 서버의 성능과 페이지의 중요도를 고려하지 않은 과도한 접근은 오히려 검색 엔진의 신뢰도를 떨어뜨리는 원인이</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0027.html">강남 바이럴 마케팅 전문 기업이 주목하는 구글 틈새 키워드 트래픽 외환 거래 전략</a>
+        <p class="post-item__summary">성공적인 트래픽 수익화는 데이터 분석 능력, 시장에 대한 이해도, 그리고 리스크 관리 시스템이라는 세 가지 조건이 충족될 때 이루어집니다. 강남 바이럴 마케팅 전문 분야에서도 이러한 논리를 적용하여</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0028.html">강남 바이럴 마케팅 전문 담당자가 알려주는 마포 단체 회식용 대형 룸 노래방 가격 정보</a>
+        <p class="post-item__summary">기업 행사를 준비할 때 적합한 장소를 찾느라 고민해 보신 적이 있으신가요? 특히 인원이 많은 단체 회식의 경우 장소의 수용 능력과 서비스 품질이 행사 전체의 분위기를 좌우하곤 합니다. 강남 바이럴 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0029.html">강남 바이럴 마케팅 전문 업체와 마포 홍대 단체 가라오케 예약 가이드 비교</a>
+        <p class="post-item__summary">디지털 환경에서의 홍보 방식은 비즈니스마다 다르지만, 강남 바이럴 마케팅 전문 방식은 특정 타깃을 공략하는 데 최적화되어 있습니다. 홍대나 합정 인근에서 회식이나 모임을 준비할 때도 마찬가지로 세밀</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0030.html">강남 바이럴 마케팅 전문 관점의 구글 알고리즘 고신용 도메인 보증 카드 발급 분석</a>
+        <p class="post-item__summary">디지털 자산의 가치를 높이기 위해 강남 바이럴 마케팅 전문 기법이 다양하게 도입되는 추세입니다. 특히 웹사이트의 신뢰도를 관리하는 과정에서 도메인 신용 한도를 어떻게 설정할지는 운영자들에게 매우 민</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0031.html">강남 바이럴 마케팅 전문 컨설팅과 구글 인덱싱 속도 초고속 광회선 대역폭 최적화</a>
+        <p class="post-item__summary">많은 사이트가 강남 바이럴 마케팅 전문 전략을 도입해도 실패하는 지점은 콘텐츠의 노출 속도입니다. 단순히 양질의 글을 작성하는 것을 넘어, 서버의 응답 속도와 데이터 전송량이 인덱싱에 결정적인 영향</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0032.html">강남 바이럴 마케팅 전문 기업이 주목하는 구글 신뢰 지수 모발이식 솔루션</a>
+        <p class="post-item__summary">의료 정보와 같이 높은 신뢰도가 요구되는 분야에서는 강남 바이럴 마케팅 전문 접근법이 일반 업종과는 다르게 적용됩니다. 특히 도메인 파워 증폭을 위해서는 정보의 정확성과 전문가적인 신뢰 지수가 무엇</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260721-0122.html">강남 바이럴 마케팅 전문 업체가 전하는 연남 클럽 추천정보 탐구</a>
+        <p class="post-item__summary">많은 이들이 연남동의 클럽 문화가 단순히 늦은 밤에만 활성화된다고 오해하곤 합니다. 하지만 실제로는 이른 저녁부터 차분한 분위기에서 음악을 즐기며 파티를 준비하는 공간들이 많다는 사실을 알아야 합니</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260721-0123.html">강남 바이럴 마케팅 전문 분석으로 보는 합정 셔츠룸 추천정보 소개</a>
+        <p class="post-item__summary">합정에서 품격 있는 셔츠룸을 찾을 때는 몇 가지 충족 조건이 필수적으로 고려되어야 합니다. 서비스의 질과 공간의 프라이빗함이 완벽하게 조화를 이루는지 확인하는 과정이 매우 중요합니다. 강남 바이럴 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260721-0124.html">강남 바이럴 마케팅 전문 평가에 따른 공덕 가라오케 추천정보 안내</a>
+        <p class="post-item__summary">공덕에서 즐거운 밤을 보내기로 결정했다면, 과연 어떤 기준을 가지고 가라오케를 선택해야 할지 고민해보신 적이 있습니까? 수많은 업소가 경쟁하는 가운데 본인의 목적에 완벽히 부합하는 곳을 찾는 것은 </p>
+      </li>
+      </ul>
+    <nav class="pager">
+      <span class="pager__current">1</span>
+      <a class="pager__link" href="posts-2.html">2</a>
+    </nav>
+    </main>
+  </div>
+</body>
+</html>
